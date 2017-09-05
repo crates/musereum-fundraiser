@@ -1,0 +1,88 @@
+@require '~css/variables.styl'
+
+.module-donations
+  background-color #634293
+
+  .bf-module-container
+    max-width 1024px
+    margin 0 auto
+    background transparent
+    box-shadow none
+
+    .bf-module-header
+      border none
+
+      .bf-module-title
+        margin-left 1rem
+        font-size 1.75rem
+        color #fff
+        letter-spacing 0.5px
+        font-weight 300
+        padding 2rem 34px
+        background url('./contribution-history-icon.svg') no-repeat left center
+        line-height 2.2rem
+
+.link-button
+  margin auto
+  display block
+
+.md-sections
+  display flex
+  flex-flow column nowrap
+  section
+    background-color #6c4d9c
+    flex 0
+    padding 1rem
+    display flex
+    flex-flow column nowrap
+    justify-content flex-start
+    h3
+      font-size 1.75rem
+      color #fff
+      line-height 1.75rem
+      text-align center
+      margin-bottom 25px
+    p
+      margin-bottom 1rem
+      font-size 0.875rem
+      text-align center
+      color #fff
+      line-height: 1.75rem
+    .bf-btn-wrapper
+      max-width 20rem
+      margin 0 auto
+
+    .bf-btn
+      background-color #4da1ff
+      border none
+      color #fff
+      font-weight 300
+
+@media screen and (min-width: 768px)
+  .module-donations
+    min-height 31rem
+
+    .bf-module-title
+      margin-left 0
+
+  .md-sections
+    justify-content space-between
+    flex-flow row nowrap
+    section
+      margin 0 2px
+      border-radius 5px
+      padding 3.25rem
+      flex-basis 300px
+      .bf-btn-wrapper
+        margin 0
+      h3
+        text-align left
+      p
+        font-size 1rem
+        text-align left
+        max-width 20rem
+        margin 0 auto 1rem
+      &:first-of-type
+        margin-left 0
+      &:last-of-type
+        margin-right 0

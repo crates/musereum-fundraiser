@@ -1,0 +1,69 @@
+@require '~css/variables.styl'
+
+.module-statistics
+  margin-bottom 4.5rem
+
+  .bf-module-main
+    padding 2rem 1.8125rem
+
+  .bf-kvs
+    flex-flow row wrap
+
+  .bf-kv
+    flex 0 0 50% !important
+    justify-content center
+    align-items center
+    padding 0
+
+    &:nth-child(2)
+      padding-right 0.65rem
+
+    &:nth-child(3)
+      padding-left 0.65rem
+
+    .bf-kv-container
+      .bf-stats
+        color #86939e
+        font-size 0.875rem
+        line-height 1
+        margin-top 1.875rem
+
+        &:first-of-type
+          margin-top 0
+
+        .integer
+          margin-top 1rem
+          color #43484d
+          font-size 1.25rem
+          font-weight 400
+          line-height 1
+
+  .pb-label
+    padding 0 0.25rem
+    color light
+    font-size 0.875rem
+
+@media screen and (min-width: 768px)
+  .module-statistics
+    .bf-kvs
+      flex-flow row wrap
+      padding 0
+    .bf-kv
+      flex 0 0 25% !important
+      justify-content flex-start
+      align-items flex-start
+
+      &:nth-child(2)
+        justify-content center
+      &:nth-child(3)
+        justify-content center
+      &:nth-child(4)
+        align-items center
+
+@media screen and (max-width: 414px)
+  .module-statistics
+    .bf-kv
+      flex 0 0 100% !important
+      padding: 1rem
+
+

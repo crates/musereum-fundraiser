@@ -1,0 +1,85 @@
+@require '~css/variables.styl'
+
+.bf-modal
+  position fixed
+  top 0
+  left 0
+  z-index 1000
+
+  width 100vw
+  height 100vh
+  background hsla(0,0,0,0.5)
+
+  display flex
+  justify-content center
+  align-items center
+  backdrop-filter blur(0.5em)
+
+  &.bf-modal-fullscreen
+    .bf-modal-container
+      max-height none
+      max-width 40rem + 6rem
+      height 100vh
+      width 100vw
+      display flex
+      flex-flow column nowrap
+    .bf-modal-main
+      flex 1
+      overflow-y scroll
+
+.bf-modal-container
+  background c-app-fg
+  box-shadow hsla(0,0,0,0.25) 0 0.25rem 1rem
+
+  max-width 30rem
+  max-height 40rem
+
+.bf-modal-header, .bf-modal-main
+  border-bottom 1px solid bc
+
+.bf-modal-header
+  display flex
+  align-items center
+  height 3rem + 0.0625rem
+
+.bf-modal-main, .bf-modal-footer
+  padding 1rem
+
+.bf-modal-icon
+  padding-left 1rem
+  padding-right 0.5rem
+  height 3rem
+  display flex
+  align-items center
+  justify-content center
+
+.bf-modal-icon + .bf-modal-title
+  padding-left 0
+
+.bf-modal-title
+  flex 1
+  font-weight 500
+  padding 0 1rem
+
+.bf-modal-close
+  cursor pointer
+  &:hover
+    color link
+
+.bf-modal-main
+  display flex
+  flex-flow column
+  justify-content center
+
+  .ps-scrollbar-y-rail
+    display none
+
+.bf-modal-main p
+  margin-bottom 1rem
+
+.bf-modal-main > .bf-article-body
+  margin -1rem
+
+.bf-modal-footer > div
+  display flex
+  justify-content space-between

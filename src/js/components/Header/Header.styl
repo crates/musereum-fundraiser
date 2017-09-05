@@ -1,0 +1,123 @@
+@require '~css/variables.styl'
+
+.app-header
+  position fixed
+  top 0
+  left 0
+  z-index 100
+  width 100%
+
+  background #fff
+  //shadow()
+  border-bottom: 1px solid #ececec
+
+  .container
+    display flex
+    flex-flow row wrap
+    justify-content space-between
+    max-width 1024px
+    margin 0 auto
+
+  .header-item
+    height 4rem
+    min-width 4rem
+    display flex
+    align-items center
+    padding 0 1rem
+
+    color txt
+    cursor pointer
+    user-select none
+    &:hover
+      color link
+
+    i.fa
+      width 1rem
+      text-align center
+    i.fa + div
+      margin-left 0.25rem
+
+  #logo
+    display flex
+    flex-flow column
+    align-items center
+    justify-content center
+    .title
+      display block
+      height 2rem
+      width auto
+      margin-bottom 0.15rem
+
+  .menu-popup
+    nav
+      a
+        display flex
+        align-items center
+        cursor pointer
+        height 4rem
+        .label
+          flex 1
+        i.fa
+          margin-right 0.5rem
+          color light
+          margin-top 0.2rem
+        img
+          height 1rem
+          margin-right 0.1rem
+        &:hover
+          i.fa
+            color link
+
+@media screen and (max-width:1023px)
+  .menu-popup
+    height 100vh
+    position fixed
+    top 4rem
+    left 0
+    bottom 0
+    width 100vw
+    z-index 100000
+
+    background c-app-fg
+    user-select none
+
+    nav
+      display flex
+      flex-flow column
+      padding 1.5rem 4rem
+
+      a
+        padding 0.75rem 0
+        color txt
+        border-bottom 1px solid bc
+        &:last-of-type
+          border-bottom none
+        &:hover
+          color link
+
+@media screen and (min-width:1024px)
+  .menu-popup nav a
+  .header-item div
+    font-weight 400
+
+  .menu-popup
+    flex 1
+    display flex
+    justify-content space-between
+
+    padding 0 0.75rem
+    nav
+      display flex
+      flex-flow row
+      align-items center
+      a
+        padding 0 1.7rem
+        color txt
+        font-weight 400
+        &.router-link-active
+          background lighten(bc, 75%)
+          background linear-gradient(top, hsl(0,0,96%), hsl(0,0,98%))
+
+  .app-header
+    .header-item.header-item-toggle
+      display none

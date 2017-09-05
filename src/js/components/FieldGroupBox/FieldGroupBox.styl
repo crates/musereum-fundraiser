@@ -1,0 +1,44 @@
+@require '~css/variables.styl'
+
+.bf-field-group
+  display flex
+  margin-bottom 0.5rem
+  max-width 40rem
+
+  .bf-field
+    flex 1
+
+  .bf-field-addon
+    width 2rem
+
+  .bf-field, .bf-btn-wrapper
+    margin 0
+
+  .bf-btn-wrapper
+    max-width 15rem
+
+  .bf-field + .bf-btn-wrapper
+    margin-left 1rem
+
+  .bf-btn-wrapper + .bf-field
+    margin-left 1rem
+
+  .bf-field-addon
+    background c-app-bg
+    border 1px solid #ccc
+    display flex
+    align-items center
+    padding 0 0.5rem
+    height 2rem
+
+    color light
+
+  .bf-field + .bf-field-addon
+    border-left none
+
+  .bf-field-addon + .bf-field
+    border-left none
+
+@media screen and (min-width: 768px)
+  .bf-field-group
+    margin-bottom 0.75rem

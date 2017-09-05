@@ -1,0 +1,50 @@
+@require '~css/variables.styl'
+
+#form-donate-btc-01
+  .bf-form-main
+    border-bottom none
+  .bf-form-footer
+    display none
+
+#donate-btc-donation-address
+  height 3.5rem !important
+  mono()
+
+.donate-btc-key-values
+  margin-bottom 1rem
+  .key-value
+    padding 0.125rem 0
+    display flex
+    align-items center
+    font-size 0.875rem
+    .key
+      flex 2
+      color dim
+    .value
+      flex 3
+      font-weight 500
+
+#donate-btc-loading
+  border-bottom none
+  > div
+    border-bottom none
+    background lighten(mcolor, 95%)
+    border-radius 0.25rem
+    margin 0.5rem 0
+    padding 0.75rem 1rem
+    text-align center
+    i.fa
+      margin-right 0.25rem
+      color mcolor
+    span
+      font-weight 400
+      color txt
+
+#donate-btc-qr
+  img
+    width 66.666vw
+    max-width 20rem
+    display block
+    margin 0 auto
+  .bf-modal-footer > div
+    justify-content center

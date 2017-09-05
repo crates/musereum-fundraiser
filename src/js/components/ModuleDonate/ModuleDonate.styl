@@ -1,0 +1,56 @@
+@require '~css/variables.styl'
+
+.module-donation
+  margin-bottom 5.5rem
+
+  .bf-kvs
+    background transparent
+    display flex
+    flex-flow row wrap
+    padding 2.25rem 0 5.81rem
+    justify-content space-between
+
+    .bf-kv
+      flex 1
+      min-width 18.5rem
+      padding 2rem 1.5rem
+      align-items center
+      text-align center
+
+  .img
+    display flex
+    align-items center
+    justify-content center
+    margin-bottom 2.5rem
+
+    img
+      height 3rem
+      display block
+
+
+
+  .exchange-rate
+    color txt
+    font-size 1.125rem
+    font-weight 400
+    letter-spacing -0.2px
+    text-transform uppercase
+    line-height 1
+
+    > span
+      margin-right 0.25rem
+
+  .min-donation
+    color #989898
+    font-size 1rem
+    line-height 1
+    margin 1.625rem 0 1.875rem
+
+  .bf-btn-wrapper
+    width 12.25rem
+    heigth 8rem
+
+@media screen and (min-width:768px)
+  .module-donation
+    .img img
+      height 4rem

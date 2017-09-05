@@ -1,0 +1,61 @@
+@require '~css/variables.styl'
+
+
+.bf-steps
+  display flex
+  justify-content center
+  max-width 40rem
+  padding 0
+  list-style none
+  margin 0 auto
+  border-radius .25em
+
+  li
+    display inline-block
+    position relative
+    float none
+    margin 0.4rem 2.5rem 0.4rem 0
+    white-space nowrap
+
+    &:last-of-type
+      margin-right 0
+
+    > *
+      z-index 1
+      padding 0.625rem 2rem
+      position relative
+      display inline-block
+
+      background #FFFFFF
+      border 1px solid #D0D7DD
+      border-radius 16.5px
+
+      font-size 0.75rem
+      line-height 1
+      color #323C47
+      letter-spacing 0.5px
+
+    &.active > *
+      border-color #E9EFF4
+      background-color #4DA1FF
+      color #fff
+
+    &::after
+      width 100%
+      top 50%
+      left 100%
+      transform translateY(-50%) translateX(-1px)
+      position absolute
+      content ''
+      height 1px
+      background #D0D7DD
+      margin 0
+
+    &:last-of-type::after
+      display none
+
+ @media screen and (max-width: 414px)
+  .bf-steps
+    li
+      margin-left 0rem
+      margin-right 0rem

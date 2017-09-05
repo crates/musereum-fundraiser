@@ -1,0 +1,47 @@
+@require './variables.styl'
+@require './vendor/*'
+
+global-reset()
+reset-html5()
+
+*
+  box-sizing border-box
+
+body
+  df()
+  background c-app-bg
+  -webkit-text-size-adjust 100%
+
+#app
+  display flex
+  flex-flow column nowrap
+  min-height 100vh
+
+.app-content
+  flex 1
+
+a
+  color link
+  text-decoration none
+
+body, input, button, textarea
+  font-size x
+  line-height 1.5
+  font-family sans
+
+strong
+  font-weight 600
+
+em
+  font-style italic
+
+.page
+  overflow hidden
+
+.hidden
+  position absolute
+  left -10000px
+  top auto
+  width 1px
+  height 1px
+  overflow hidden

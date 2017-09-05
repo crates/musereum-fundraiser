@@ -1,0 +1,20 @@
+@require '~css/variables.styl'
+
+.bf-form-msg
+  font-size 0.75rem
+  margin 0 0 0.5rem
+  display flex
+  &:before
+    content ''
+    font-family FontAwesome
+    padding-right 0.35rem
+  &.bf-form-msg-error
+    color #f00
+    &:before
+      content '\f06a'
+      color #f00
+  &.bf-form-msg-desc
+    color #666
+    &:before
+      content '\f059'
+      color #ffbf00

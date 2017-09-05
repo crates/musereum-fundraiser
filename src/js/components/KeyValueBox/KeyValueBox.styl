@@ -1,0 +1,40 @@
+@require '~css/variables.styl'
+
+.bf-kv
+  display flex
+  flex-flow column no-wrap
+  align-items center
+  padding 1rem
+
+.bf-kv-value
+.bf-kv-key
+  display flex
+  justify-content center
+
+.bf-kv-value
+  font-size 1.25rem
+  line-height 1
+  margin-bottom 0.75rem
+  font-weight 400
+
+.bf-kv-key
+  color light
+  font-size 0.75rem
+  font-weight 400
+  line-height 1
+
+@media screen and (min-width: 414px)
+  .bf-kv
+    padding 0.75rem 1rem
+
+@media screen and (min-width: 768px)
+  .bf-kv
+    padding 1.5rem
+
+  .bf-kv-value
+    font-size 1.5rem
+    margin-bottom 1rem
+
+  .bf-kv-key
+    font-size 1rem
+    font-weight 300

@@ -1,0 +1,31 @@
+@require '~css/variables.styl'
+
+.bf-btn-group
+  margin-bottom 0.5rem
+  max-width 40rem
+
+  display flex
+  .bf-btn-wrapper
+    flex 1
+
+  .bf-btn-wrapper:first-of-type
+    .bf-btn
+      border-top-right-radius 0
+      border-bottom-right-radius 0
+
+  .bf-btn-wrapper:not(:first-child):not(:last-child)
+    .bf-btn
+      border-radius 0
+
+  .bf-btn-wrapper:last-of-type
+    .bf-btn
+      border-top-left-radius 0
+      border-bottom-left-radius 0
+
+  .bf-btn-wrapper + .bf-btn-wrapper
+    .bf-btn
+      border-left none
+
+@media screen and (min-width: 768px)
+  .bf-btn-group
+    margin-bottom 0.75rem

@@ -1,0 +1,84 @@
+@require '~css/variables.styl'
+
+.bf-field
+  -webkit-appearance none
+  border 1px solid #ccc
+  vertical-align top
+  padding 0.1875rem 0.5rem
+  font-size 16px
+  line-height 1.5rem
+  border-radius 0
+  display block
+  width 100%
+  background #fff
+  &:disabled
+    color #666
+    text-shadow none
+    box-shadow none
+    background #eee
+  &:focus
+    outline none
+    box-shadow none
+    border 1px solid #09c
+  &::-webkit-input-placeholder
+    color #666
+  &:-moz-placeholder
+    color #666
+    opacity 1
+  &::-moz-placeholder
+    color #666
+    opacity 1
+  &:-ms-input-placeholder
+    color #666
+  &:placeholder-shown
+    color #666
+  &.bf-field-small
+    height 1.5rem
+    font-size 0.75rem
+    padding-left 0.5rem
+    padding-right 0.5rem
+  &.bf-field-large
+    height 3rem
+    font-size 1.125rem
+    padding-left 0.75rem
+    padding-right 0.75rem
+  &.bf-theme-tendermint
+    color #fff
+    background hsl(210,70%,18%)
+    border-color hsl(210,70%,38%)
+    &:focus
+      border-color hsl(210,70%,43%)
+    &::-webkit-input-placeholder
+      color hsl(210,70%,70%)
+    &:-moz-placeholder
+      color hsl(210,70%,70%)
+      opacity 1
+    &::-moz-placeholder
+      color hsl(210,70%,70%)
+      opacity 1
+    &:-ms-input-placeholder
+      color hsl(210,70%,70%)
+    &:placeholder-shown
+      color hsl(210,70%,70%)
+
+input
+  &.bf-field
+    height 2rem
+
+textarea
+  &.bf-field
+    height 4rem
+    resize none
+
+.input-group-addon
+  background #eee
+  border 1px solid #ccc
+  border-left none
+  padding 0 0.5rem
+  color #666
+  line-height 1.875rem
+  font-size 0.75rem
+
+@media screen and (min-width: 360px)
+  .input-group-addon
+    font-size 1rem

@@ -1,0 +1,29 @@
+
+<svg width="46px" height="65px" viewBox="0 0 46 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-697.000000, -748.000000)" fill-rule="nonzero" fill="#010101">
+            <g id="Donate" transform="translate(209.000000, 716.000000)">
+                <g id="Feature-" transform="translate(360.000000, 32.000000)">
+                    <g id="ethereum" transform="translate(128.859060, 0.000000)">
+                        <g id="Group" opacity="0.6" transform="translate(0.000000, 24.000000)">
+                            <polygon id="Shape" points="21.6485501 1.13686838e-13 -4.06820411e-13 9.13421053 21.6485501 21 43.2885906 9.13421053"></polygon>
+                        </g>
+                        <g id="Group" opacity="0.45">
+                            <polygon id="Shape" points="4.90441021e-14 33.1839623 22.147651 45 22.147651 0"></polygon>
+                        </g>
+                        <g id="Group" opacity="0.8" transform="translate(22.147651, 0.000000)">
+                            <polygon id="Shape" points="0 0 0 45 22.147651 33.1839623"></polygon>
+                        </g>
+                        <g id="Group" opacity="0.45" transform="translate(0.000000, 37.000000)">
+                            <polygon id="Shape" points="4.90441021e-14 6.27102537e-14 22.147651 28 22.147651 11.7421875"></polygon>
+                        </g>
+                        <g id="Group" opacity="0.8" transform="translate(22.147651, 37.000000)">
+                            <polygon id="Shape" points="0 11.7421875 0 28 22.147651 6.7137268e-14"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

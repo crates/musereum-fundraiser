@@ -1,0 +1,76 @@
+@require '~css/variables.styl'
+
+.bf-forms, .bf-form
+  padding 0.25rem
+
+.bf-form
+  max-width 40rem
+  display flex
+
+  &.bf-form-narrow
+    max-width 21.333rem
+
+.bf-form-container
+  flex 1
+  background c-app-fg
+  display flex
+  flex-flow column
+  position relative
+  shadow()
+
+.bf-form-header, .bf-form-footer
+  padding 1rem
+
+.bf-form-main
+  flex 1
+  border-bottom 1px solid bc
+
+.bf-form-footer
+  display flex
+
+.bf-form-header
+  border-bottom 1px solid bc
+
+.bf-form-subtitle
+  color dim
+  font-size 0.875rem
+
+.bf-form-title
+  font-weight 500
+
+.bf-form-footer
+  display flex
+  justify-content space-between
+  align-items center
+
+@media screen and (min-width: 360px)
+  .bf-form-title
+    font-size 1.125rem
+
+  .bf-form-header, .bf-form-footer
+    padding-left 1.5rem
+    padding-right 1.5rem
+
+  .bf-form-title
+    font-size 1.25rem
+
+@media screen and (min-width: 768px)
+  .bf-forms, .bf-form
+    padding 0.333rem
+
+  .bf-form-header, .bf-form-footer
+    padding-top 1.5rem
+    padding-bottom 1.5rem
+
+  .bf-form-title
+    margin-bottom 0.5rem
+    font-size 1.5rem
+    font-weight bold
+
+  .bf-form-subtitle
+    font-size 1rem
+    color txt
+
+@media screen and (min-width: 1024px)
+  .bf-forms, .bf-form
+    padding 0.5rem
