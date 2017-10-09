@@ -1,0 +1,3 @@
+[submodule "musereum-fundraiser-lib"]
+	path = musereum-fundraiser-lib
+	url = git@github.com:musereum/musereum-fundraiser-lib.git
