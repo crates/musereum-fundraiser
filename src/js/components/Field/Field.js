@@ -61,6 +61,7 @@ export default class Field extends Component { // eslint-disable-line
     const {
       placeholder, className, type, size,
       value, autofocus, required, theme,
+      onChange,
       ...rest
     } = this.props;
     const cssClass = this.cssClass();

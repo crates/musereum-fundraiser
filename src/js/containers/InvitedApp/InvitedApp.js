@@ -25,6 +25,7 @@ function mapDispatchToProps(dispatch) {
 export default class InvitedApp extends Component { // eslint-disable-line
   static propTypes = {
     children: PropTypes.element.isRequired,
+    invitedIn: PropTypes.bool,
     isCheckInviteLoading: PropTypes.bool,
     checkInviteError: PropTypes.string,
     replace: PropTypes.func,
@@ -32,9 +33,9 @@ export default class InvitedApp extends Component { // eslint-disable-line
     checkInvite: PropTypes.func.isRequired,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { invite} = this.props.location.query;
-    if(invite) {
+    if (invite) {
       this.props.checkInvite(invite);
     } else {
       this.props.replace('/needinvite');
@@ -43,17 +44,17 @@ export default class InvitedApp extends Component { // eslint-disable-line
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.checkInviteError != '') {
-      console.log(11111111111111);
       this.props.replace('/needinvite');
     }
   }
 
   render() {
-    const { children, isCheckInviteLoading } = this.props;
+    const { children, isCheckInviteLoading, invitedIn } = this.props;
 
-    if (isCheckInviteLoading) {
+    //if (isCheckInviteLoading) {
+    if (!invitedIn) {
       return (
-        <section>
+        <section className={cx('loading-app')}>
           <Loader />
           <NotificationsSystem theme={theme}/>
         </section>

@@ -8,6 +8,8 @@ import FormStruct from 'components/FormStruct';
 import ModuleOverlay from 'components/ModuleOverlay';
 import FormGroupBox from 'components/FormGroupBox';
 
+import './Agreement.styl';
+
 export default class Agreement extends Component { // eslint-disable-line
 
   static propTypes = {
@@ -36,6 +38,7 @@ export default class Agreement extends Component { // eslint-disable-line
 
     return (
       <FormStruct
+        id='form-agreement'
         onSubmit={this.yes}
         overlay={
           !fundraiserActive ? <ModuleOverlay overlayMessage={overlayMessage}/> : null

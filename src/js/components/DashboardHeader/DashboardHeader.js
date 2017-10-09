@@ -73,7 +73,6 @@ for DAPPS'
               started={started}
             />
           </KeyValuesBox>
-
         </div>
       </header>
     );

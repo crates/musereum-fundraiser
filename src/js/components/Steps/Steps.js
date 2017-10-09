@@ -6,7 +6,8 @@ import './Steps.styl';
 const steps = [
   { title: '1. Terms', keys: [0] },
   { title: '2. Wallet', keys: [1, 2, 'input'] },
-  { title: '3. Contribute', keys: [3, 4] },
+  { title: '3. Coupon', keys: ['coupon'] },
+  { title: '4. Contribute', keys: [3, 4] },
 ];
 
 export default class Steps extends Component { // eslint-disable-line

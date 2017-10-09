@@ -38,7 +38,7 @@ export default class InputWallet extends Component { // eslint-disable-line
   nextStep = () => {
     if (isEmpty(this.state.error)) {
       this.props.setDonationMnemonicAndWallet(this.mnemonicValue)
-      this.props.setDonationProgress(3);
+      this.props.setDonationProgress('coupon');
     }
   }
 

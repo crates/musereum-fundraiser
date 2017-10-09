@@ -22,8 +22,9 @@ export default class Request {
   }
 
   setQuery(query) {
-    const _query = query ? {query: JSON.stringify(query)} : query;
-    Object.assign(this.query, _query);
+    //const _query = query ? {query: JSON.stringify(query)} : query;
+    //Object.assign(this.query, _query);
+    Object.assign(this.query, query);
     return this;
   }
 
@@ -48,7 +49,7 @@ export default class Request {
         method: this.type,
         body: this.body && JSON.stringify(this.body),
         headers: this.headers,
-        //credentials: 'include',
+        credentials: 'include',
         mode: 'cors'
       })
       .then(response => {

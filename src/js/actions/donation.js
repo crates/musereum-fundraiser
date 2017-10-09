@@ -61,36 +61,10 @@ export function fetchBtcDonationFeeRate() {
 }
 
 //
-export function fetchBtcDonationETMRate() {
-  return (dispatch) => {
-    /*
-    return ethereum.fetchBTCRate(ethereum.FUNDRAISER_CONTRACT, (err, weiPerBTC) => {
-      if (err) {
-        console.error(err);
-        dispatch(notify({
-          title: 'Ethereum Error',
-          message: 'Could not fetch ETM/ETH exchange rate.',
-          status: 'error',
-          dismissible: true,
-          dismissAfter: 10000
-        }));
-        return;
-      }
-
-      return dispatch({
-        type: 'SET_DONATION',
-        payload: {
-          btcRate,
-        }
-      });
-    })
-    */
-  }
-}
-
-//
 export function fetchEthDonationETMRate() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const { btcRate } = donation(getState());
+
     return new Promise((resolve, reject) => {
       ethereum.fetchBTCRate(ethereum.FUNDRAISER_CONTRACT, (err, weiPerBTC) => {
         if (err) {
@@ -105,9 +79,8 @@ export function fetchEthDonationETMRate() {
           return;
         }
 
-        const etmPerBTC = 5000;
-        const btcPerEth = weiPerBTC/1e18;
-        const ethRate = etmPerBTC*btcPerEth;
+        const btcPerEth = weiPerBTC/btcRate;
+        const ethRate = 1e18/btcPerEth;
 
         //const ethRate = Math.pow(10, 18) / weiPerETM;
         resolve({
@@ -123,7 +96,9 @@ export function fetchEthDonationETMRate() {
 
 //
 export function fetchEtcDonationETMRate() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const { btcRate } = donation(getState());
+
     return new Promise((resolve, reject) => {
       ethereumclassic.fetchBTCRate(ethereumclassic.FUNDRAISER_CONTRACT, (err, weiPerBTC) => {
         if (err) {
@@ -137,9 +112,8 @@ export function fetchEtcDonationETMRate() {
           }));
         }
 
-        const etmPerBTC = 5000;
-        const btcPerEtc = weiPerBTC/1e18;
-        const etcRate = etmPerBTC*btcPerEtc;
+        const btcPerEtc = weiPerBTC/btcRate;
+        const etcRate = 1e18/btcPerEtc;
 
         resolve({
           type: 'SET_DONATION',
@@ -155,7 +129,7 @@ export function fetchEtcDonationETMRate() {
 //
 export function finalizeBtcDonation(cb) {
   return (dispatch, getState) => {
-    const { wallet, tx, feeRate } = donation(getState());
+    const { wallet, tx, feeRate, btcRate } = donation(getState());
     console.log('tx', tx);
     const finalTx = bitcoin.createFinalTx(tx.utxos, feeRate);
     const signedTx = bitcoin.signFinalTx(wallet, finalTx.tx);
@@ -175,10 +149,13 @@ export function finalizeBtcDonation(cb) {
 
       const txid = signedTx.getId();
       console.log('sent final tx. txid=' + txid);
+
+      const etmAmount = (finalTx.btcAmount * btcRate) / 1e8
+
       dispatch(resetDonation());
       dispatch(notify({
         title: 'Donation Successful',
-        message: `You have succesfully contributed ${finalTx.paidAmount / 1e8} BTC and will receive ${finalTx.etmAmount} ETM.`,
+        message: `You have succesfully contributed ${finalTx.paidAmount / 1e8} BTC and will receive ${etmAmount} ETM.`,
         status: 'success',
         dismissible: true,
         dismissAfter: 10000

@@ -15,11 +15,14 @@ import {
   fetchEtcDonationETMRate,
   setDonationMnemonicAndWallet,
   finalizeBtcDonation,
+  fetchCouponRate,
 } from 'actions';
 
 import Steps from 'components/Steps';
 
 import Agreement from 'components/Agreement';
+
+import Coupon from 'components/Coupon';
 
 import CreateWallet01 from 'components/CreateWallet01';
 import CreateWallet02 from 'components/CreateWallet02';
@@ -45,6 +48,7 @@ function mapDispatchToProps(dispatch) {
     fetchEtcDonationETMRate,
     setDonationMnemonicAndWallet,
     finalizeBtcDonation,
+    fetchCouponRate,
     notify,
   }, dispatch);
 }
@@ -68,6 +72,7 @@ export default class Donate extends Component { // eslint-disable-line
     fetchEtcDonationETMRate: PropTypes.func,
     setDonationMnemonicAndWallet: PropTypes.func,
     finalizeBtcDonation: PropTypes.func,
+    fetchCouponRate: PropTypes.func,
 
     notify: PropTypes.func,
   }
@@ -106,6 +111,7 @@ export default class Donate extends Component { // eslint-disable-line
       fetchEthDonationETMRate,
       fetchEtcDonationETMRate,
       finalizeBtcDonation,
+      fetchCouponRate,
 
       notify,
     } = this.props;
@@ -117,6 +123,15 @@ export default class Donate extends Component { // eslint-disable-line
           overlayMessage={overlayMessage}
 
           push={push}
+          setDonationProgress={setDonationProgress}
+        />
+      );
+    } else if(donation.progress === 'coupon') {
+      return (
+        <Coupon
+          donation={donation}
+
+          fetchCouponRate={fetchCouponRate}
           setDonationProgress={setDonationProgress}
         />
       );

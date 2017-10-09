@@ -8,7 +8,7 @@ export function checkInvite(invite) {
         'CHECK_INVITE_SUCCESS',
         'CHECK_INVITE_ERROR',
       ],
-      endpoint: `/lead/${invite}`,
+      endpoint: `/leads/${invite}`,
     },
     meta: { invite },
   };

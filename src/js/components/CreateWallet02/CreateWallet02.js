@@ -43,7 +43,7 @@ export default class CreateWallet02 extends Component { // eslint-disable-line
     */
 
     if(isEmpty(this.state.error)) {
-      this.props.setDonationProgress(3);
+      this.props.setDonationProgress('coupon');
     }
   }
 
