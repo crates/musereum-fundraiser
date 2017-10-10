@@ -5,6 +5,7 @@
   "main": "src/js/index.js",
   "scripts": {
     "develop": "cross-env NODE_ENV=development node server.js",
+    "build-dev": "cross-env NODE_ENV=development npm run clean && npm run build:webpack",
     "build": "cross-env NODE_ENV=production npm run clean && npm run build:webpack",
     "build:webpack": "webpack --config webpack/webpack.config.production.js",
     "build:webpack:local": "webpack-dashboard -- webpack --config webpack/webpack.config.production.js",
