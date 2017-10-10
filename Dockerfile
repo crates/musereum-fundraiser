@@ -5,3 +5,4 @@ RUN cd musereum-fundraiser-lib && npm i && npm link musereum-fundraiser-lib && \
 
 FROM nginx:1.12.1
 COPY --from=builder /dist /dist
+VOLUME /var/log/nginx
