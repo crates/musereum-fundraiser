@@ -1,8 +1,8 @@
 module.exports = {
-  START_DATETIME: '2017-09-01 09:54:00',
+  START_DATETIME: '2017-10-10 09:54:00',
   api: {
-    host: 'http://localhost',
-    port: '7000',
-    suffix: false // 'api'
+    host: 'http://frstest1.eastus.cloudapp.azure.com',
+    port: '80',
+    suffix: 'api'
   },
 };

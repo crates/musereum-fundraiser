@@ -1,8 +1,10 @@
 FROM node:8 as builder
-
-RUN cd musereum-fundraiser-lib && npm i && npm link musereum-fundraiser-lib && \
-  cd .. && npm i && npm run build-dev
+ADD . /app
+WORKDIR /app
+RUN cd build/musereum-fundraiser-lib && npm i && npm link
+RUN npm link musereum-fundraiser-lib && npm i && npm run build-dev
 
 FROM nginx:1.12.1
-COPY --from=builder /dist /dist
+COPY --from=builder /app/dist /app
+COPY build/nginx /etc/nginx
 VOLUME /var/log/nginx
