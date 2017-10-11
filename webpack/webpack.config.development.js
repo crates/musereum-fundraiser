@@ -1,7 +1,7 @@
 const { resolve } = require('path')
 const webpack = require('webpack');
 const Config = require('webpack-config').default;
-const DashboardPlugin = require('webpack-dashboard/plugin');
+//const DashboardPlugin = require('webpack-dashboard/plugin');
 const webpackBaseConfig = require('./webpack.config.base');
 
 module.exports = new Config().extend('webpack/webpack.config.base').merge({
@@ -26,7 +26,7 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new DashboardPlugin()
+    //new DashboardPlugin()
   ],
 
   module: {

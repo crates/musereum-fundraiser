@@ -42,7 +42,7 @@ export default class DonateBtc02 extends Component { // eslint-disable-line
     const finalTx = this.finalTx();
     const donationAmount = finalTx.paidAmount;
     const bitcoinFee = finalTx.feeAmount;
-    const etmAmount = finalTx.etmAmount;
+    const etmAmount = (finalTx.btcAmount * donation.btcRate) / 1e8;
 
     const btcExchangeRate = num.pretty(donation.btcRate);
 
