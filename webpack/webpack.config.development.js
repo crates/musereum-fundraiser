@@ -25,7 +25,8 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    }),
+    })
+    //,
     //new DashboardPlugin()
   ],
 

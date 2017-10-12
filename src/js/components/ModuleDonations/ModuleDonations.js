@@ -18,7 +18,8 @@ export default class ModuleDonations extends Component { // eslint-disable-line
   state = {
     details: true,
     btcLink: `https://blockchain.info/address/${cfr.bitcoin.EXODUS_ADDRESS}`,
-    ethLink: `https://etherscan.io/address/${cfr.ethereum.FUNDRAISER_CONTRACT}`
+    ethLink: `https://etherscan.io/address/${cfr.ethereum.FUNDRAISER_CONTRACT}`,
+    etcLink: `https://etherscan.io/address/${cfr.ethereumclassic.FUNDRAISER_CONTRACT}`
   }
 
   componentDidMount() {
@@ -59,7 +60,7 @@ export default class ModuleDonations extends Component { // eslint-disable-line
           <section>
             <h3>ETC</h3>
             <p>View the history of Ether Classic contributions on Etherhub (etherhub.io)</p>
-            <a href={ethLink} rel="noopener noreferrer" target="_blank">
+            <a href={etcLink} rel="noopener noreferrer" target="_blank">
               <Btn
                 className="link-button"
                 icon="external-link"

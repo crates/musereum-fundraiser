@@ -5,10 +5,10 @@
   "main": "src/js/index.js",
   "scripts": {
     "develop": "cross-env NODE_ENV=development node server.js",
-    "build": "cross-env NODE_ENV=production npm run clean && npm run build:webpack",
-    "build-dev": "cross-env NODE_ENV=development npm run clean && npm run build:webpack:dev",
+    "build": "cross-env NODE_ENV=product ion npm run clean && npm run build:webpack",
+    "build-dev": "cross-env NODE_ENV=development npm run clean && npm run build:webpack:stage",
     "build:webpack": "webpack --config webpack/webpack.config.production.js",
-    "build:webpack:dev": "webpack --config webpack/webpack.config.development.js",
+    "build:webpack:stage": "webpack --config webpack/webpack.config.staging.js",
     "build:webpack:local": "webpack-dashboard -- webpack --config webpack/webpack.config.production.js",
     "clean": "rimraf dist",
     "lint": "eslint src/js"
