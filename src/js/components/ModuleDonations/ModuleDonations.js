@@ -27,7 +27,7 @@ export default class ModuleDonations extends Component { // eslint-disable-line
   }
 
   render() {
-    const { btcLink, ethLink } = this.state;
+    const { btcLink, ethLink, etcLink } = this.state;
 
     return (
       <ModuleBox
