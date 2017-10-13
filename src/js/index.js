@@ -30,7 +30,6 @@ if (module.hot && process.env.NODE_ENV === 'development') {
   module.hot.accept('./containers/Root', () => render());
 }
 
-//store.dispatch(fetchBtcDonationETMRate());
 store.dispatch(fetchEthDonationETMRate());
 store.dispatch(fetchEtcDonationETMRate());
 store.dispatch(startStatusInterval());

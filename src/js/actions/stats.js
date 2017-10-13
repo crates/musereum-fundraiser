@@ -98,7 +98,7 @@ export function fetchStats() {
       return dispatch({
         type: 'SET_STATS_PROGRESS',
         payload: {
-          etcRaised: ether,
+          etcRaised: etherclassic,
           etmClaimedEtc: etm,
         }
       });
