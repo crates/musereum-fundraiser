@@ -11,6 +11,9 @@ const initialState = {
   btcRate: cfr.bitcoin.ETM_PER_BTC,
   ethRate: 0,
   etcRate: 0,
+
+  ethWeiPerBtc: 0,
+  etcWeiPerBtc: 0,
 }
 
 export default function (state = initialState, action) {

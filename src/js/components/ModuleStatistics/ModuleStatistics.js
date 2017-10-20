@@ -21,7 +21,9 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
   static propTypes = {
     progress: PropTypes.object.isRequired,
     txCount: PropTypes.number.isRequired,
-    etmClaimed: PropTypes.number.isRequired,
+    //etmClaimed: PropTypes.number.isRequired,
+    etmContributed: PropTypes.number.isRequired,
+    btcContributed: PropTypes.number.isRequired,
 
     started: PropTypes.bool.isRequired,
   }
@@ -38,20 +40,25 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
   }
 
   capLabel() {
-    const { etmClaimed } = this.props;
+    const { /*etmClaimed,*/ /* etmContributed */ btcContributed } = this.props;
     const { capped } = this.state;
 
     if (capped) {
-      let current = num.usdInt(etmClaimed / 10);
-      let total = num.usdInt(config.CAP_AMOUNT / 10);
-      return `${current} / ${total} USD`;
+      //let current = num.usdInt(etmClaimed / 10);
+      //let current = num.usdInt(etmContributed / 10);
+      let current = num.pretty(btcContributed);
+      //let total = num.usdInt(config.CAP_AMOUNT / 10);
+      let totalMin = num.prettyInt(config.CAP_AMOUNT_BTC_MIN);
+      let totalMax = num.prettyInt(config.CAP_AMOUNT_BTC);
+      //return `${current} / ${total} USD`;
+      return `${current} / ${totalMin}-${totalMax} BTC`;
     } else {
       return 'Hidden';
     }
   }
 
-  renderCircles({ btc, eth, etc }) {
-    const { started, etmClaimed } = this.props;
+  renderCircles(btc, eth, etc) {
+    const { started, /*etmClaimed,*/ etmContributed } = this.props;
     const { capped } = this.state;
 
     const endHiddenDatetime = date.endHiddenDatetime(started);
@@ -122,7 +129,8 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
     }
 
     if (started && capped) {
-      const share = (etmClaimed / config.CAP_AMOUNT) || 0;
+      //const share = (etmClaimed / config.CAP_AMOUNT) || 0;
+      const share = (etmContributed / config.CAP_AMOUNT) || 0;
       const shareOfCap = [{ y:  share, color: '#218cff' }];
 
       return [
@@ -134,8 +142,8 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
         </KeyValueBox>,
         <KeyValueBox key={2}>
           <Donut data={sharesOfTokens}>
-            <text {...circleTextTitle}>$5M</text>
-            <text {...circleTextSubTitle}>Total sales</text>
+            <text {...circleTextTitle}>{num.short(etmContributed)} ETM</text>
+            <text {...circleTextSubTitle}>Share of coins</text>
           </Donut>
         </KeyValueBox>
       ];
@@ -146,14 +154,14 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
 
   render() {
     const {
-      txCount, etmClaimed,
+      txCount, etmClaimed, etmContributed,
       started,
     } = this.props;
     const capLabel = this.capLabel();
-    const etm = num.pretty(etmClaimed);
-    const btc = this.props.progress.btcRaised;
-    const eth = this.props.progress.ethRaised;
-    const etc = this.props.progress.etcRaised;
+    //const etm = num.pretty(etmClaimed);
+    const etm = num.pretty(etmContributed);
+    const { btcRaised, ethRaised, etcRaised } = this.props.progress;
+    const { etmContributedBtc, etmContributedEth, etmContributedEtc } = this.props.progress;
 
     return (
       <ModuleBox
@@ -182,22 +190,22 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
             </div>
           </KeyValueBox>
 
-          {this.renderCircles({ btc, eth, etc })}
+          {this.renderCircles(etmContributedBtc, etmContributedEth, etmContributedEtc)}
 
           <KeyValueBox>
-            <div title={num.full(btc)} className="bf-stats">
+            <div title={num.full(btcRaised)} className="bf-stats">
               BTC raised
-              <div className="integer">{num.short(btc)}</div>
+              <div className="integer">{num.short(btcRaised)}</div>
             </div>
 
-            <div title={num.full(eth)} className="bf-stats">
+            <div title={num.full(ethRaised)} className="bf-stats">
               ETH raised
-              <div className="integer">{num.short(eth)}</div>
+              <div className="integer">{num.short(ethRaised)}</div>
             </div>
 
-            <div title={num.full(0)} className="bf-stats">
+            <div title={num.full(etcRaised)} className="bf-stats">
               ETC raised
-              <div className="integer">{num.short(0)}</div>
+              <div className="integer">{num.short(etcRaised)}</div>
             </div>
           </KeyValueBox>
         </KeyValuesBox>

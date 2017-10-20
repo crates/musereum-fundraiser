@@ -6,19 +6,21 @@ const environment = process.env.NODE_ENV ;
 const production = environment !== 'development'; // if this is truthy (i.e. set, then we're good)
 const envConfig = production ? require('./production.js') : require('./development.js');
 
+const CAP_AMOUNT = 100000000;
+
 const baseConfig = {
   ENDS_AFTER: 14,
-  FUNDRAISER_URL: 'https://fundraiser.musereum.org',
-  SELF_URL: 'https://musereum.org/',
-  TIMEZONE: 'America/Los_Angeles',
-  ANNOUNCE_DATETIME: '2017-03-15 07:10:00',
-  CAP_START: 6,         // cap enforced X hours after START_DATETIME
-  CAP_AMOUNT: 100000000, // cap in ETM ($0.10 USD)
-  ETM: {
-  },
+  //FUNDRAISER_URL: 'https://fundraiser.musereum.org',
+  //SELF_URL: 'https://musereum.org/',
+  //TIMEZONE: 'America/Los_Angeles',
+  //ANNOUNCE_DATETIME: '2017-03-15 07:10:00',
+  CAP_START: 6, // cap enforced X hours after START_DATETIME
+  CAP_AMOUNT: CAP_AMOUNT, // cap in ETM
+  CAP_AMOUNT_BTC_MIN: 1000, // cap in BTC
+  CAP_AMOUNT_BTC: 2000, // cap in BTC
   COINS: {
     BTC: {
-      MIN_CONTRIBUTION: cfr.bitcoin.MINIMUM_AMOUNT / 100000000,
+      MIN_CONTRIBUTION: cfr.bitcoin.MINIMUM_AMOUNT / CAP_AMOUNT,
       MAX_CONTRIBUTION: 1000,
       NAME: 'Bitcoin',
       UNIT: 'BTC'

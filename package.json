@@ -5,10 +5,10 @@
   "main": "src/js/index.js",
   "scripts": {
     "develop": "cross-env NODE_ENV=development node server.js",
-    "build": "cross-env NODE_ENV=product ion npm run clean && npm run build:webpack",
-    "build-dev": "cross-env NODE_ENV=development npm run clean && npm run build:webpack:stage",
+    "build": "cross-env NODE_ENV=production npm run clean && npm run build:webpack",
+    "build-dev": "cross-env NODE_ENV=development npm run clean && npm run build:webpack:staging",
     "build:webpack": "webpack --config webpack/webpack.config.production.js",
-    "build:webpack:stage": "webpack --config webpack/webpack.config.staging.js",
+    "build:webpack:staging": "webpack --config webpack/webpack.config.staging.js",
     "build:webpack:local": "webpack-dashboard -- webpack --config webpack/webpack.config.production.js",
     "clean": "rimraf dist",
     "lint": "eslint src/js"
@@ -91,7 +91,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.9",
-    "webpack": "^3.4.1",
+    "webpack": "^3.8.0",
     "webpack-config": "^7.1.0",
     "webpack-config-plugin": "^1.0.0",
     "webpack-dashboard": "^1.0.0-2",

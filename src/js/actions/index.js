@@ -3,3 +3,4 @@ export * from './donation';
 export * from './stats';
 export * from './invite';
 export * from './coupon';
+export * from './contribution';

@@ -27,7 +27,9 @@ export default class Dashboard extends Component { // eslint-disable-line
   static propTypes = {
     progress: PropTypes.object.isRequired,
     txCount: PropTypes.number.isRequired,
-    etmClaimed: PropTypes.number.isRequired,
+    //etmClaimed: PropTypes.number.isRequired,
+    etmContributed: PropTypes.number.isRequired,
+    btcContributed: PropTypes.number.isRequired,
 
     started: PropTypes.bool.isRequired,
     fundraiserActive: PropTypes.bool.isRequired,
@@ -40,7 +42,7 @@ export default class Dashboard extends Component { // eslint-disable-line
 
   render() {
     const {
-      progress, txCount, etmClaimed,
+      progress, txCount, /*etmClaimed,*/ etmContributed, btcContributed,
       started, fundraiserActive, overlayMessage,
       donation,
       push,
@@ -54,7 +56,9 @@ export default class Dashboard extends Component { // eslint-disable-line
           <ModuleStatistics
             progress={progress}
             txCount={txCount}
-            etmClaimed={etmClaimed}
+            //etmClaimed={etmClaimed}
+            etmContributed={etmContributed}
+            btcContributed={btcContributed}
             started={started}
           />
           <ModuleDonate

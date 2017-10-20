@@ -12,7 +12,7 @@ export function callCouponRate(code, { coin, address }) {
         'CALL_COUPON_RATE_SUCCESS',
         'CALL_COUPON_RATE_ERROR',
       ],
-      endpoint: `/coupons`,
+      endpoint: '/coupons',
       data: {
         code,
         coin,

@@ -87,6 +87,7 @@ export function fetchEthDonationETMRate() {
           type: 'SET_DONATION',
           payload: {
             ethRate,
+            ethWeiPerBtc: weiPerBTC,
           }
         });
       })
@@ -119,6 +120,7 @@ export function fetchEtcDonationETMRate() {
           type: 'SET_DONATION',
           payload: {
             etcRate,
+            etcWeiPerBtc: weiPerBTC,
           }
         });
       });

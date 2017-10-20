@@ -37,7 +37,7 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
         if_return: true
       },
       mangle: {
-        except: [ 'Array', 'BigInteger', 'Boolean', 'ECPair', 'Function', 'Number', 'Point' ]
+        except: ['Array','BigInteger','Boolean','Buffer','ECPair','Function','Number','Point']
       },
       output: {
         comments: false

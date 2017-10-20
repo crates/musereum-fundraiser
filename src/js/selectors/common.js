@@ -38,6 +38,21 @@ export const etmClaimed = createDeepEqualSelector(
   [progress],
   (progress) => (progress.etmClaimedBtc + progress.etmClaimedEth + progress.etmClaimedEtc)
 );
+export const etmContributed = createDeepEqualSelector(
+  [progress, donation],
+  (progress, donation) => (progress.etmContributedBtc + progress.etmContributedEth + progress.etmContributedEtc)
+);
+export const btcContributed = createDeepEqualSelector(
+  [progress, donation],
+  (progress, donation) => {
+    let sumBtc = progress.btcRaised;
+    if (donation.ethWeiPerBtc)
+      sumBtc += (progress.ethRaised * 1e18) / donation.ethWeiPerBtc;
+    if (donation.etcWeiPerBtc)
+      sumBtc += (progress.etcRaised * 1e18) / donation.etcWeiPerBtc;
+    return sumBtc;
+  }
+);
 
 export const invitedAppSelector = createDeepEqualSelector(
   [statusSelector('invite')],
@@ -47,11 +62,13 @@ export const invitedAppSelector = createDeepEqualSelector(
 );
 
 export const dashboardSelector = createDeepEqualSelector(
-  [progress, txCount, etmClaimed, started, fundraiserActive, overlayMessage, donation],
-  (progress, txCount, etmClaimed, started, fundraiserActive, overlayMessage, donation) => ({
+  [progress, txCount, /*etmClaimed,*/ etmContributed, btcContributed, started, fundraiserActive, overlayMessage, donation],
+  (progress, txCount, /*etmClaimed,*/ etmContributed, btcContributed, started, fundraiserActive, overlayMessage, donation) => ({
     progress,
     txCount,
-    etmClaimed,
+    //etmClaimed,
+    etmContributed,
+    btcContributed,
 
     started,
     fundraiserActive,

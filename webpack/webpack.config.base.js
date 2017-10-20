@@ -23,6 +23,7 @@ module.exports = new Config().merge({
       'react-router',
       'react-router-redux',
       'redux-combine-actions',
+      'musereum-fundraiser-lib'
     ]
   },
   output: {
