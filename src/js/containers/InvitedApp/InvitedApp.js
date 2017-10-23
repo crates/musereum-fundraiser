@@ -7,9 +7,6 @@ import { checkInvite } from 'actions';
 import { invitedAppSelector } from 'selectors';
 import { replace } from 'react-router-redux';
 
-import NotificationsSystem from 'reapop';
-import theme from 'reapop-theme-wybo';
-
 import Loader from 'components/Loader';
 
 import cx from './InvitedApp.styl';
@@ -56,7 +53,6 @@ export default class InvitedApp extends Component { // eslint-disable-line
       return (
         <section className={cx('loading-app')}>
           <Loader />
-          <NotificationsSystem theme={theme}/>
         </section>
       );
     }
@@ -64,7 +60,6 @@ export default class InvitedApp extends Component { // eslint-disable-line
     return (
       <section className={cx('invited-app')}>
         {children}
-        <NotificationsSystem theme={theme}/>
       </section>
     );
   }

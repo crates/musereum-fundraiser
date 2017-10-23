@@ -9,7 +9,7 @@ const envConfig = production ? require('./production.js') : require('./developme
 const CAP_AMOUNT = 100000000;
 
 const baseConfig = {
-  ENDS_AFTER: 14,
+  ENDS_AFTER: 41,
   //FUNDRAISER_URL: 'https://fundraiser.musereum.org',
   //SELF_URL: 'https://musereum.org/',
   //TIMEZONE: 'America/Los_Angeles',

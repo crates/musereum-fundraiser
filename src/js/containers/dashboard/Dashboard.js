@@ -50,7 +50,7 @@ export default class Dashboard extends Component { // eslint-disable-line
     const coins = Object.keys(config.COINS).map(key => config.COINS[key]);
 
     return (
-      <div  className="page page-dashboard">
+      <div className="page page-dashboard">
         <DashboardHeader started={started}/>
         <ModulesBox>
           <ModuleStatistics

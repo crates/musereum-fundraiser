@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const Config = require('webpack-config').default;
 //const DashboardPlugin = require('webpack-dashboard/plugin');
 const webpackBaseConfig = require('./webpack.config.base');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = new Config().extend('webpack/webpack.config.base').merge({
 
@@ -25,14 +26,27 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
-    //,
+    }),
     //new DashboardPlugin()
+    new ExtractTextPlugin({ filename: 'css/[name].[contenthash].css', allChunks: true })
   ],
 
   module: {
     rules: [{
       test: /\.(css|styl)$/,
+      use: ['classnames-loader'].concat(
+        ExtractTextPlugin.extract({
+          fallback: [
+            'style-loader'
+          ],
+          use: [
+            'css-loader',
+            'stylus-loader',
+            'postcss-loader'
+          ]
+        })
+      )
+      /*
       use: [
         'classnames-loader',
         'style-loader',
@@ -46,6 +60,7 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
         'stylus-loader',
         'postcss-loader'
       ]
+      */
     }]
   },
 

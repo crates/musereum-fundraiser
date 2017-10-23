@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import disableScroll from 'disable-scroll';
 
 import './Header.styl';
 
 export default class Header extends Component { // eslint-disable-line
+
+  static propTypes = {
+    setDonationProgress: PropTypes.func.isRequired,
+  }
 
   state = {
     activeMenuApp: false,
@@ -46,6 +51,7 @@ export default class Header extends Component { // eslint-disable-line
   }
 
   closeMenus = () => {
+    this.props.setDonationProgress(0); // Return to terms and conditions
     this.setState({ activeMenuApp: false, activeMenuUser: false });
     disableScroll.off();
   }
