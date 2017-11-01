@@ -95,7 +95,7 @@ export default class Header extends Component { // eslint-disable-line
                 <Link to="/contribute/etc" activeClassName="active" onClick={this.closeMenus}>Buy with ETC</Link>
               </nav>
               <nav>
-                <a href="https://musereum.network" target="_blank">
+                <a href="https://musereum.org" target="_blank">
                   <i className="fa fa-external-link"></i>
                   <span className="label">Musereum</span>
                 </a>

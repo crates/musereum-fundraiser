@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 37 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="logo">
+    <polygon points="20.7782102 18.8051948 3.4110895 18.8051948 0 19.8441558 3.4110895 20.8831168 20.7782102 20.8831168 12.0859923 35.3593073 3.4110895 20.8831168 0 19.8441558 12.0859923 39.7056277 24.1892997 19.8441558 12.0859923 0 0 19.8441558 3.4110895 18.8051948 12.0859923 4.34632034"></polygon>
+    <polygon points="32.9854086 18.961039 15.6182879 18.961039 12.2071984 20 15.6182879 21.038961 32.9854086 21.038961 24.2931907 35.5151515 15.6182879 21.038961 12.2071984 20 24.2931907 39.8614719 36.3964981 20 24.2931907 0.155844156 12.2071984 20 15.6182879 18.961039 24.2931907 4.5021645"></polygon>
+  </g>
+
+  <animateTransform
+    xlink:href="#logo"
+    attributeName="transform"
+    additive="sum"
+    type="rotate"
+    calcMode="linear"
+    begin="0"
+    dur="1.8"
+    repeatCount="indefinite"
+    keyTimes="0;0.5;1"
+    values="0 18.5 20 ; 0 18.5 20 ; 360 18.5 20"
+    fill="freeze" />
+</svg>

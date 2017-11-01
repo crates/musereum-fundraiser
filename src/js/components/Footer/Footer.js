@@ -14,7 +14,7 @@ export default class Footer extends Component {
             048834 Singapore
           </div>
 
-          <div className="about"><a href="http://slack.musereum.network">Need help?</a></div>
+          <div className="about"><a href="http://slack.musereum.org">Need help?</a></div>
         </div>
       </footer>
     );
