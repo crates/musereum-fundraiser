@@ -7,25 +7,25 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = new Config().merge({
   context: resolve(__dirname, '../src'),
-  entry: {
-    'vendor': [
-      // js
-      'lodash',
-      'react',
-      'redux',
-      'selectn',
-      'reselect',
-      'react-dom',
-      'normalizr',
-      'classnames',
-      'react-redux',
-      'redux-thunk',
-      'react-router',
-      'react-router-redux',
-      'redux-combine-actions',
-      'musereum-fundraiser-lib'
-    ]
-  },
+  // entry: {
+  //   'vendor': [
+  //     // js
+  //     'lodash',
+  //     'react',
+  //     'redux',
+  //     'selectn',
+  //     'reselect',
+  //     'react-dom',
+  //     'normalizr',
+  //     'classnames',
+  //     'react-redux',
+  //     'redux-thunk',
+  //     'react-router',
+  //     'react-router-redux',
+  //     'redux-combine-actions',
+  //     'musereum-fundraiser-lib'
+  //   ]
+  // },
   output: {
     path: resolve(__dirname, '../dist/'),
     publicPath: '/'
@@ -49,7 +49,7 @@ module.exports = new Config().merge({
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: Infinity
+      minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({

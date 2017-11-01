@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router';
 
 import NotFound from 'components/NotFound';
 import InvitedApp from './InvitedApp';
+import NeedInvite from './NeedInvite';
 import Main from './Main';
 import Dashboard from './dashboard';
 import Donate from './donate';
@@ -22,7 +23,7 @@ export default (
       </Route>
     </Route>
 
-    <Route path="/404" component={NotFound} />
+    <Route path="/needinvite" component={NeedInvite} />
     <Route path="*" component={NotFound} />
   </Route>
 );

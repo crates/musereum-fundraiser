@@ -20,12 +20,14 @@ export default class DonateBtc02 extends Component { // eslint-disable-line
 
     push: PropTypes.func.isRequired,
     finalizeBtcDonation: PropTypes.func.isRequired,
+    setDonationProgress: PropTypes.func.isRequired,
   }
 
   finalize = () => {
     this.props.finalizeBtcDonation((err) => {
       if (err) return;
 
+      this.props.setDonationProgress(0);
       this.props.push('/');
     });
   }

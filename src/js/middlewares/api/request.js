@@ -54,12 +54,18 @@ export default class Request {
       })
       .then(response => {
         if (response.status === 200 || response.status === 201) {
-          response.json().then(resolve);
+          response.json().then((result) => {
+            if (result.success === true) {
+              resolve(result);
+            } else {
+              reject(result);
+            }
+          });
         } else {
           response.json().then(reject);
         }
       })
-      .catch(error => reject(error.message));
+      .catch(error => reject(error));
     });
   }
 }

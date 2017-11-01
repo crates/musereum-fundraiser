@@ -24,9 +24,8 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
     new webpack.optimize.UglifyJsPlugin({
-      warnings: true,
       compress: {
-        warnings: true,
+        warnings: false,
         screw_ie8: true,
         conditionals: true,
         unused: true,

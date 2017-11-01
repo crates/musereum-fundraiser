@@ -79,13 +79,13 @@ export default class Donate extends Component { // eslint-disable-line
 
   componentDidMount() {
     const currency = this.props.params.currency.toUpperCase();
-    this.setCurrency(currency)
+    this.setCurrency(currency);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.currency !== nextProps.params.currency) {
       const currency = nextProps.params.currency.toUpperCase();
-      this.setCurrency(currency)
+      this.setCurrency(currency);
     }
   }
 
@@ -199,6 +199,7 @@ export default class Donate extends Component { // eslint-disable-line
           donation={donation}
 
           push={push}
+          setDonationProgress={setDonationProgress}
           finalizeBtcDonation={finalizeBtcDonation}
         />
       );

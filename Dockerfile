@@ -9,4 +9,3 @@ COPY --from=builder /app/dist /app
 COPY build/nginx /etc/nginx
 RUN mkdir /letsencrypt-webroot
 VOLUME /var/log/nginx /letsencrypt-webroot
-RUN rm -rf /etc/nginx/conf.d/tokensale.musereum.org.conf

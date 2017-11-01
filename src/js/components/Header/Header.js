@@ -89,10 +89,10 @@ export default class Header extends Component { // eslint-disable-line
           {(this.state.activeMenuApp || this.state.desktop) &&
             <menu className="menu-popup">
               <nav className="nav-app">
-                <Link to="/" onClick={this.closeMenus}>Dashboard</Link>
-                <Link to="/contribute/btc" onClick={this.closeMenus}>Buy with BTC</Link>
-                <Link to="/contribute/eth" onClick={this.closeMenus}>Buy with ETH</Link>
-                <Link to="/contribute/etc" onClick={this.closeMenus}>Buy with ETC</Link>
+                <Link to="/" activeClassName="active" onClick={this.closeMenus}>Dashboard</Link>
+                <Link to="/contribute/btc" activeClassName="active" onClick={this.closeMenus}>Buy with BTC</Link>
+                <Link to="/contribute/eth" activeClassName="active" onClick={this.closeMenus}>Buy with ETH</Link>
+                <Link to="/contribute/etc" activeClassName="active" onClick={this.closeMenus}>Buy with ETC</Link>
               </nav>
               <nav>
                 <a href="https://musereum.network" target="_blank">

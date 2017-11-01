@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { checkInvite } from 'actions';
+import {
+  checkInvite,
+  startFetchContributionsInterval,
+} from 'actions';
 import { invitedAppSelector } from 'selectors';
 import { replace } from 'react-router-redux';
 
@@ -15,6 +18,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     checkInvite,
     replace,
+    startFetchContributionsInterval,
   }, dispatch);
 }
 
@@ -28,12 +32,15 @@ export default class InvitedApp extends Component { // eslint-disable-line
     replace: PropTypes.func,
     location: PropTypes.object,
     checkInvite: PropTypes.func.isRequired,
+    startFetchContributionsInterval: PropTypes.func.isRequired,
   }
 
   componentDidMount() {
-    const { invite} = this.props.location.query;
+    const { invite } = this.props.location.query;
     if (invite) {
-      this.props.checkInvite(invite);
+      this.props.checkInvite(invite).then(() => {
+        this.props.startFetchContributionsInterval();
+      });
     } else {
       this.props.replace('/needinvite');
     }
@@ -48,7 +55,6 @@ export default class InvitedApp extends Component { // eslint-disable-line
   render() {
     const { children, isCheckInviteLoading, invitedIn } = this.props;
 
-    //if (isCheckInviteLoading) {
     if (!invitedIn) {
       return (
         <section className={cx('loading-app')}>

@@ -26,7 +26,7 @@ module.exports = new Config().extend('webpack/webpack.config.base').merge({
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.MUSEREUM_BASE_URL': JSON.stringify('http://testfund.musereum.org:8080')
+      'process.env.MUSEREUM_BASE_URL': JSON.stringify('https://tokensale.musereum.org:8443')
     }),
     //new DashboardPlugin()
     new ExtractTextPlugin({ filename: 'css/[name].[contenthash].css', allChunks: true })

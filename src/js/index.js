@@ -34,6 +34,5 @@ if (module.hot && process.env.NODE_ENV === 'development') {
 store.dispatch(fetchEthDonationETMRate());
 store.dispatch(fetchEtcDonationETMRate());
 store.dispatch(startStatusInterval());
-//store.dispatch(startFetchInterval())
 store.dispatch(startFetchContributionsInterval())
 store.dispatch(generateDonationWallet());

@@ -88,3 +88,10 @@ export const donateSelector = createDeepEqualSelector(
   })
 );
 
+export const needInviteSelector = createDeepEqualSelector(
+  [statusSelector('invite')],
+  (invite) => ({
+    ...invite,
+  })
+);
+
