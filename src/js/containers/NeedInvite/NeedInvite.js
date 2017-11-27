@@ -44,7 +44,7 @@ export default class InvitedApp extends Component { // eslint-disable-line
       return (
         <div>
           You need an invite to take part in the crowdsdale.<br/>
-          Check the mail or earn by the referral program on <br/>
+          Check the mail or earn an invite by the referral program on <br/>
           <a href="http://musereum.org" className={cx('site-link')}>Musereum</a>
         </div>
       )
