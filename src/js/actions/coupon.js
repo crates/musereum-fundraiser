@@ -49,7 +49,7 @@ export function fetchCouponRate(code, data) {
           dismissible: true,
           dismissAfter: 10000
         }));
-      } else {
+      } else if (res.meta.code !== '') {
         dispatch(notify({
           title: "Coupon doesn't exist",
           message: `This had no effect on the rate`,

@@ -9,12 +9,12 @@ export default class Footer extends Component {
       <footer className="app-footer">
         <div className="container">
           <div className="copyright">
-            &copy; 2017 Musereum Prt Ltd. <br/>
+            &copy; 2017 Musereum Pte Ltd. <br/>
             22 North Canal Road<br/>
             048834 Singapore
           </div>
 
-          <div className="about"><a href="http://slack.musereum.org">Need help?</a></div>
+          <div className="about"><a href="https://t.me/joinchat/AxlyZhDrU1JxQeE27eiTVQ">Need help?</a></div>
         </div>
       </footer>
     );

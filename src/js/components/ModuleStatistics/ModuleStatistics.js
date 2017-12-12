@@ -35,7 +35,7 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
   timerId = null
 
   componentDidMount() {
-    const timerId = window.setInterval(() => {
+    this.timerId = window.setInterval(() => {
       this.setState({ capped: date.capped() });
       if(this.state.capped) clearInterval(timerId);
     }, 1000)
@@ -55,9 +55,10 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
       let current = num.pretty(btcContributed);
       //let total = num.usdInt(config.CAP_AMOUNT / 10);
       let totalMin = num.prettyInt(config.CAP_AMOUNT_BTC_MIN);
-      let totalMax = num.prettyInt(config.CAP_AMOUNT_BTC);
+      //let totalMax = num.prettyInt(config.CAP_AMOUNT_BTC);
       //return `${current} / ${total} USD`;
-      return `${current} / ${totalMin}-${totalMax} BTC`;
+      //return `${current} / ${totalMin}-${totalMax} BTC`;
+      return `${current} / ${totalMin} BTC`;
     } else {
       return 'Hidden';
     }
@@ -186,7 +187,7 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
             </div>
 
             <div className="bf-stats">
-              Donations
+              Contributions
               <div className="integer">{num.int(txCount)}</div>
             </div>
 

@@ -22,7 +22,7 @@ import Steps from 'components/Steps';
 
 import Agreement from 'components/Agreement';
 
-import Coupon from 'components/Coupon';
+// import Coupon from 'components/Coupon';
 
 import CreateWallet01 from 'components/CreateWallet01';
 import CreateWallet02 from 'components/CreateWallet02';
@@ -122,19 +122,22 @@ export default class Donate extends Component { // eslint-disable-line
           fundraiserActive={fundraiserActive}
           overlayMessage={overlayMessage}
 
+          donation={donation}
+          fetchCouponRate={fetchCouponRate}
+
           push={push}
           setDonationProgress={setDonationProgress}
         />
       );
-    } else if(donation.progress === 'coupon') {
-      return (
-        <Coupon
-          donation={donation}
+    // } else if(donation.progress === 'coupon') {
+    //   return (
+    //     <Coupon
+    //       donation={donation}
 
-          fetchCouponRate={fetchCouponRate}
-          setDonationProgress={setDonationProgress}
-        />
-      );
+    //       fetchCouponRate={fetchCouponRate}
+    //       setDonationProgress={setDonationProgress}
+    //     />
+    //   );
     } else if(donation.progress === 1) {
       return (
         <CreateWallet01

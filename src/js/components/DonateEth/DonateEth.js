@@ -72,12 +72,12 @@ export default class DonateEth extends Component { // eslint-disable-line
               <div className="value">{config.COINS.ETH.MAX_CONTRIBUTION} ETH</div>
             </div>
           </div>
-          <p className="disclaimer">
+          <p className="bf-form-msg bf-form-msg-desc">
             <sup>*</sup> The actual Exchange Rate may differ from what is shown
-            depending on when the exchange rate is updated on the donation smart
+            depending on when the exchange rate is updated on the contribution smart
             contract.  Check the most recent ETH/BTC rate before submitting a
-            donation, and for best results, pay a suffiently large fee to get your
-            donation transaction committed quickly.
+            contribution, and for best results, pay a suffiently large fee to get your
+            contribution transaction committed quickly.
           </p>
         </FormGroupBox>
 
@@ -88,9 +88,9 @@ export default class DonateEth extends Component { // eslint-disable-line
         </FormGroupBox>
 
         <FormGroupBox>
-          <p>To make your donation, copy and paste the below information into a wallet
+          <p>To make your contribution, copy and paste the below information into a wallet
   such as MyEtherWallet or Mist. Be sure to include an amount of ETH to
-  contribute! Your Musereum address is included in the data, and the donation
+  contribute! Your Musereum address is included in the data, and the contribution
   will be recorded for that address in the smart contract.</p>
           <label htmlFor="donate-eth-donation-tx">Transaction Data</label>
           <FieldGroupBox>

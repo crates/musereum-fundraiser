@@ -147,7 +147,7 @@ export default class DonateBtc01 extends Component { // eslint-disable-line
           <div>
             <div className="container">
               <i className="fa fa-circle-o-notch fa-spin"></i>
-              <span>Waiting for donation&hellip;</span>
+              <span>Waiting for contribution&hellip;</span>
             </div>
           </div>
         </FormGroupBox>

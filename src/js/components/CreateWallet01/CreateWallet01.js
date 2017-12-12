@@ -37,7 +37,7 @@ export default class CreateWallet01 extends Component { // eslint-disable-line
         overlay={
           !fundraiserActive ? <ModuleOverlay overlayMessage={overlayMessage}/> : null
         }
-        title={'Donate ' + donation.currency}
+        title={'Contribute ' + donation.currency}
         subtitle={
           fundraiserActive ?
             `Copy this mnemonic and store it in a secure location. You'll need it to access your etm later.`
@@ -46,7 +46,7 @@ export default class CreateWallet01 extends Component { // eslint-disable-line
             <br />
             <p className="end-notice">
               <strong>NOTICE: </strong>
-              The fundraiser is not active. If you choose to donate, <strong>you will NOT receive ETM</strong>.
+              The fundraiser is not active. If you choose to contribute, <strong>you will NOT receive ETM</strong>.
             </p>
           </div>
         }

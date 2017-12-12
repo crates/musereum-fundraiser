@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import moment from 'moment';
 
+
+import './TimeRemaining.styl';
 import KeyValueBox from 'components/KeyValueBox';
 
 export default class TimeRemain extends Component { // eslint-disable-line

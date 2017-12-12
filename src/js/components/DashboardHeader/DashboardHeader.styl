@@ -89,6 +89,28 @@
   .bf-form
     margin 0 auto
 
+.bf-ph__bf-kvs
+  padding 0rem 0 3.81rem !important
+
+  .bf-kv
+    margin 5px 0
+
+    &:first-child
+      align-items center
+
+      .bf-btn
+        background-image linear-gradient(-153deg, #555 0%, #000 95%)
+
+    &:last-child
+      align-items center
+
+  .bf-btn
+    background-image linear-gradient(-153deg, #c45afc 0%, #512ef7 95%)
+    color #FFFFFF
+    letter-spacing 1px
+    width 150px
+    border none
+
 @media screen and (min-width: 768px)
   .bf-ph
     .bf-ph-title
@@ -96,6 +118,14 @@
       padding 2.18rem 0.75rem 4.7rem
     .bf-ph-title-sub
       font-size 2.25rem
+
+  .bf-ph__bf-kvs
+    .bf-kv
+      &:first-child
+        align-items flex-end
+
+      &:last-child
+        align-items flex-start
 
 @media screen and (min-width: 1024px)
   .bf-ph

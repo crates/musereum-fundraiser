@@ -59,6 +59,18 @@ for DAPPS'
             />
           </KeyValuesBox>
 
+          <div className="bf-kvs bf-ph__bf-kvs">
+            <div className="bf-kv">
+              <span className="bf-btn"><span className="bf-btn-value">WHITE PAPER</span></span>
+            </div>
+            <div className="bf-kv">
+              <span className="bf-btn"><span className="bf-btn-value">ONE PAGER</span></span>
+            </div>
+            <div className="bf-kv">
+              <span className="bf-btn"><span className="bf-btn-value">FAQ</span></span>
+            </div>
+          </div>
+
           <KeyValuesBox>
             {/*
             <TimeRemaining

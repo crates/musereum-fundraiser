@@ -1,0 +1,1 @@
+docker build -t frstest1.eastus.cloudapp.azure.com:5000/musereum-fundraiser:v0.44 .

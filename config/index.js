@@ -14,10 +14,10 @@ const baseConfig = {
   //SELF_URL: 'https://musereum.org/',
   //TIMEZONE: 'America/Los_Angeles',
   //ANNOUNCE_DATETIME: '2017-03-15 07:10:00',
-  CAP_START: 6, // cap enforced X hours after START_DATETIME
+  CAP_START: 48, // cap enforced X hours after START_DATETIME
   CAP_AMOUNT: CAP_AMOUNT, // cap in ETM
-  CAP_AMOUNT_BTC_MIN: 500, // cap in BTC
-  CAP_AMOUNT_BTC: 667, // cap in BTC
+  CAP_AMOUNT_BTC_MIN: 200, // cap in BTC
+  //CAP_AMOUNT_BTC: 667, // cap in BTC
   COINS: {
     BTC: {
       MIN_CONTRIBUTION: cfr.bitcoin.MINIMUM_AMOUNT / CAP_AMOUNT,
