@@ -37,7 +37,7 @@ export default class ModuleStatistics extends Component { // eslint-disable-line
   componentDidMount() {
     this.timerId = window.setInterval(() => {
       this.setState({ capped: date.capped() });
-      if(this.state.capped) clearInterval(timerId);
+      if(this.state.capped) clearInterval(this.timerId);
     }, 1000)
   }
 

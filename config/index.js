@@ -37,6 +37,9 @@ const baseConfig = {
       NAME: 'Ethereum Classic',
       UNIT: 'ETC'
     }
+  },
+  docs: {
+    terms: 'https://github.com/musereum/docs/raw/master/tokensale/MUSEREUM%20TOKEN%20SALE%20TERMS.pdf'
   }
 };
 

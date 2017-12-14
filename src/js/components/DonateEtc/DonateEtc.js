@@ -64,11 +64,11 @@ export default class DonateEtc extends Component { // eslint-disable-line
               <div className="value">1 ETC : {etcExchangeRate} ETM</div>
             </div>
             <div className="key-value">
-              <div className="key">Min Donation</div>
+              <div className="key">Min Amount</div>
               <div className="value">{config.COINS.ETC.MIN_CONTRIBUTION} ETC</div>
             </div>
             <div className="key-value">
-              <div className="key">Max Donation</div>
+              <div className="key">Max Amount</div>
               <div className="value">{config.COINS.ETC.MAX_CONTRIBUTION} ETC</div>
             </div>
           </div>
@@ -89,8 +89,8 @@ export default class DonateEtc extends Component { // eslint-disable-line
 
         <FormGroupBox>
           <p>To make your contribution, copy and paste the below information into a wallet
-  such as Classic Ether Wallet or Jaxx. Be sure to include an amount of ETC to
-  donate! Your Musereum address is included in the data, and the contribution
+  such as MyEtherWallet. Be sure to include an amount of ETC to
+  send! Your Musereum address is included in the data, and the contribution
   will be recorded for that address in the smart contract.</p>
           <label htmlFor="donate-etc-donation-tx">Transaction Data</label>
           <FieldGroupBox>

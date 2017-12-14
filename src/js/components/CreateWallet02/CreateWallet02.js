@@ -33,17 +33,8 @@ export default class CreateWallet02 extends Component { // eslint-disable-line
   }
 
   nextStep = () => {
-
-    /*
-    this.fields.mnemonic = this.mnemonicValue
-    this.$v.$touch()
-    if (!this.$v.$error) {
-      this.$store.commit('setDonationProgress', 3)
-    }
-    */
-
     if(isEmpty(this.state.error)) {
-      this.props.setDonationProgress('coupon');
+      this.props.setDonationProgress(3);
     }
   }
 

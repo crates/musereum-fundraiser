@@ -36,13 +36,6 @@ export default class DonateBtc01 extends Component { // eslint-disable-line
   transactionInterval = null
 
   componentDidMount() {
-    /*
-    let el = document.querySelector('#donate-btc-donation-address')
-    el.addEventListener('focus', function () {
-      el.select()
-    })
-    */
-
     const btcAddress = this.props.donation.wallet.addresses.bitcoin;
     console.log('waiting for tx to ' + btcAddress)
     this.transactionInterval = bitcoin.waitForPayment(btcAddress, (err, inputs) => {
@@ -108,11 +101,11 @@ export default class DonateBtc01 extends Component { // eslint-disable-line
               <div className="value">1 BTC : {btcExchangeRate} ETM</div>
             </div>
             <div className="key-value">
-              <div className="key">Min Donation</div>
+              <div className="key">Min Amount</div>
               <div className="value">{config.COINS.BTC.MIN_CONTRIBUTION} BTC</div>
             </div>
             <div className="key-value">
-              <div className="key">Max Donation</div>
+              <div className="key">Max Amount</div>
               <div className="value">{config.COINS.BTC.MAX_CONTRIBUTION} BTC</div>
             </div>
           </div>
@@ -120,7 +113,7 @@ export default class DonateBtc01 extends Component { // eslint-disable-line
         </FormGroupBox>
 
         <FormGroupBox>
-          <label htmlFor="donate-btc-donation-address">Donation Address</label>
+          <label htmlFor="donate-btc-donation-address">Contribution Address</label>
           <FieldGroupBox>
             <Field
               id="donate-btc-donation-address"
@@ -165,7 +158,7 @@ export default class DonateBtc01 extends Component { // eslint-disable-line
           >
             <div>
               <img
-                alt="Donation QR Code"
+                alt="Contribution QR Code"
                 src={qrcode}
               />
             </div>

@@ -30,13 +30,14 @@ export function fetchCouponRate(code, data) {
       if (!success) {
         console.log(message);
         dispatch(notify({
-          title: 'Ethereum Error',
-          message: 'Could not fetch coupon rate',
+          title: 'Server Error',
+          //message: 'Could not fetch coupon rate',
+          message: 'Something wrong with server',
           status: 'error',
           dismissible: true,
           dismissAfter: 5000
         }));
-        return;
+        return res;
       }
 
       console.log('got btc coupon rate:', result);
@@ -68,6 +69,8 @@ export function fetchCouponRate(code, data) {
 
       dispatch(fetchEthDonationETMRate());
       dispatch(fetchEtcDonationETMRate());
+
+      return res;
     });
   }
 }

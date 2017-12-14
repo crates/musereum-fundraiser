@@ -156,7 +156,7 @@ export function finalizeBtcDonation(cb) {
 
       dispatch(resetDonation());
       dispatch(notify({
-        title: 'Donation Successful',
+        title: 'Contribution Successful',
         message: `You have succesfully contributed ${finalTx.paidAmount / 1e8} BTC and will receive ${etmAmount} ETM.`,
         status: 'success',
         dismissible: true,

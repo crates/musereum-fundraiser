@@ -64,11 +64,11 @@ export default class DonateEth extends Component { // eslint-disable-line
               <div className="value">1 ETH : {ethExchangeRate} ETM</div>
             </div>
             <div className="key-value">
-              <div className="key">Min Donation</div>
+              <div className="key">Min Amount</div>
               <div className="value">{config.COINS.ETH.MIN_CONTRIBUTION} ETH</div>
             </div>
             <div className="key-value">
-              <div className="key">Max Donation</div>
+              <div className="key">Max Amount</div>
               <div className="value">{config.COINS.ETH.MAX_CONTRIBUTION} ETH</div>
             </div>
           </div>

@@ -71,7 +71,7 @@ export default class DonateBtc02 extends Component { // eslint-disable-line
         <FormGroupBox>
           <div className="fund-btc-key-values">
             <div className="key-value">
-              <div className="key">Donation Amount</div>
+              <div className="key">Contribution Amount</div>
               <div className="value">{donationAmount / 1e8} BTC</div>
             </div>
             <div className="key-value">

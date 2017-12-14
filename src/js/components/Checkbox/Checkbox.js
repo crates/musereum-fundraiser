@@ -6,25 +6,19 @@ import './Checkbox.styl';
 export default class Checkbox extends Component { // eslint-disable-line
 
   static propTypes = {
-    label: PropTypes.string.isRequired,
-    handleCheckboxChange: PropTypes.func.isRequired,
+    label: PropTypes.string,
+    onClick: PropTypes.func,
+    checked: PropTypes.bool
   }
 
-  state = {
-    isChecked: false,
-  }
-
-  toggleCheckboxChange = () => {
-    const { handleCheckboxChange, label } = this.props;
-
-    this.setState(({ isChecked }) => ({ isChecked: !isChecked }));
-
-    handleCheckboxChange(label);
+  static defaultProps = {
+    label: '',
+    checked: false,
+    onClick: ()=>{}
   }
 
   render() {
-    const { label } = this.props;
-    const { isChecked } = this.state;
+    const { label, checked, onClick } = this.props;
 
     return (
       <div className="checkbox">
@@ -32,8 +26,8 @@ export default class Checkbox extends Component { // eslint-disable-line
           <input
             type="checkbox"
             value={label}
-            checked={isChecked}
-            onChange={this.toggleCheckboxChange}
+            checked={checked}
+            onChange={onClick}
           />
 
           {label}

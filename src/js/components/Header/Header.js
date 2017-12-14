@@ -43,15 +43,17 @@ export default class Header extends Component { // eslint-disable-line
   watchWindowSize = () => {
     let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     if (w >= 1024) {
-      this.closeMenus();
+      this.closeMenus('resize');
       this.setState({ desktop: true });
       return
     }
     this.setState({ desktop: false });
   }
 
-  closeMenus = () => {
-    this.props.setDonationProgress(0); // Return to terms and conditions
+  closeMenus = (reason) => {
+    if (reason != 'resize') {
+      this.props.setDonationProgress(0); // Return to terms and conditions
+    }
     this.setState({ activeMenuApp: false, activeMenuUser: false });
     disableScroll.off();
   }
@@ -95,16 +97,13 @@ export default class Header extends Component { // eslint-disable-line
                 <Link to="/contribute/etc" activeClassName="active" onClick={this.closeMenus}>Buy with ETC</Link>
               </nav>
               <nav>
+                <a href="https://t.me/joinchat/AxlyZhDrU1JxQeE27eiTVQ" title="Musereum Q&A Chat" target="_blank">
+                  <i className="fa fa-telegram" style={{color: '#32afed',  fontSize: '18px'}}></i>
+                </a>
                 <a href="http://musereum.org" target="_blank">
                   <i className="fa fa-external-link"></i>
                   <span className="label">Musereum</span>
                 </a>
-                {/*
-                <a href="http://slack.musereum.network" target="_blank">
-                  <i className="fa fa-slick"></i>
-                  <span className="label">Discuss on Slack</span>
-                </a>
-              */}
               </nav>
             </menu>
           }

@@ -61,13 +61,13 @@ for DAPPS'
 
           <div className="bf-kvs bf-ph__bf-kvs">
             <div className="bf-kv">
-              <span className="bf-btn"><span className="bf-btn-value">WHITE PAPER</span></span>
+              <a className="bf-btn" href="https://drive.google.com/file/d/1ezwsLPgyyY4bro_CK6xFLkjgmKACvxHR/view" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">WHITE PAPER</span></a>
             </div>
             <div className="bf-kv">
-              <span className="bf-btn"><span className="bf-btn-value">ONE PAGER</span></span>
+              <a className="bf-btn" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">ONE PAGER</span></a>
             </div>
             <div className="bf-kv">
-              <span className="bf-btn"><span className="bf-btn-value">FAQ</span></span>
+              <a className="bf-btn" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">FAQ</span></a>
             </div>
           </div>
 

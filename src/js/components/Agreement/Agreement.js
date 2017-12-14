@@ -25,23 +25,32 @@ export default class Agreement extends Component { // eslint-disable-line
   }
 
   state = {
-    agreed: false
+    agreed: false,
+    selectedCheckboxes: new Set(),
   }
 
-  selectedCheckboxes = new Set();
-
-  componentWillMount = () => {
-    this.selectedCheckboxes = new Set();
+  componentWillReceiveProps(nextProps) {
+    if (this.props.donation.currency !== nextProps.donation.currency) {
+      this.setState({
+        selectedCheckboxes: new Set(),
+        agreed: false
+      });
+    }
   }
 
-  toggleCheckbox = label => {
-    if (this.selectedCheckboxes.has(label)) {
-      this.selectedCheckboxes.delete(label);
+  toggleCheckbox = key => {
+    const { selectedCheckboxes } = this.state;
+
+    if (selectedCheckboxes.has(key)) {
+      selectedCheckboxes.delete(key);
     } else {
-      this.selectedCheckboxes.add(label);
+      selectedCheckboxes.add(key);
     }
 
-    this.setState({ agreed: this.selectedCheckboxes.size === 1 })
+    this.setState({
+      selectedCheckboxes,
+      agreed: selectedCheckboxes.size === 2
+    })
   }
 
   openTerms() {
@@ -55,8 +64,14 @@ export default class Agreement extends Component { // eslint-disable-line
     this.props.fetchCouponRate('', {
       coin: donation.currency,
       address: donation.wallet.addresses.musereum,
-    }).then(() => {
-      this.props.setDonationProgress(3);
+    }).then((res) => {
+      let { success } = res.payload;
+
+      if (success) {
+        this.props.setDonationProgress(1);
+      } else {
+        this.props.setDonationProgress(0);
+      }
     });
   }
 
@@ -67,6 +82,7 @@ export default class Agreement extends Component { // eslint-disable-line
 
   render() {
     const { fundraiserActive, overlayMessage } = this.props;
+    const { selectedCheckboxes } = this.state;
 
     return (
       <FormStruct
@@ -92,7 +108,7 @@ export default class Agreement extends Component { // eslint-disable-line
           <Btn value="Cancel" onClick={this.no}/>
         }
         submit={
-          <Btn value="Agree" disabled={!this.state.agreed} type="submit"/>
+          <Btn value="Continue" disabled={!this.state.agreed} type="submit"/>
         }
       >
         <FormGroupBox>
@@ -100,13 +116,20 @@ export default class Agreement extends Component { // eslint-disable-line
             onClick={this.openTerms}
             size="lg"
             icon="download"
-            value="Download Agreement"
+            value="Download Terms & Conditions"
           />
 
           <Checkbox
-            label="I confirm that I'm not a citizen of the USA, Singapore and I don't have any bindings with it."
-            handleCheckboxChange={this.toggleCheckbox}
+            label="I confirm that I'm not a citizen or a resident of the USA, Singapore, China, South Korea and I don't have any connection to these countries."
+            onClick={() => this.toggleCheckbox('usa')}
+            checked={selectedCheckboxes.has('usa')}
             key="usa"
+          />
+          <Checkbox
+            label="I have read, understood and agree to the Terms and Conditions"
+            onClick={() => this.toggleCheckbox('terms')}
+            checked={selectedCheckboxes.has('terms')}
+            key="terms"
           />
         </FormGroupBox>
       </FormStruct>

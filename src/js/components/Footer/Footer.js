@@ -14,7 +14,15 @@ export default class Footer extends Component {
             048834 Singapore
           </div>
 
-          <div className="about"><a href="https://t.me/joinchat/AxlyZhDrU1JxQeE27eiTVQ">Need help?</a></div>
+          <div className="about">
+            <a href="https://twitter.com/musereum" target="_blank" rel="noopener noreferrer" className="tw-link">
+              <i className="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/musereum" target="_blank" rel="noopener noreferrer" className="fb-link">
+              <i className="fa fa-facebook-official"></i>
+            </a>
+            <a href="https://t.me/joinchat/AxlyZhDrU1JxQeE27eiTVQ" target="_blank" rel="noopener noreferrer">Need help?</a>
+          </div>
         </div>
       </footer>
     );
