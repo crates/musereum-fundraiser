@@ -64,10 +64,10 @@ for DAPPS'
               <a className="bf-btn" href="https://drive.google.com/file/d/1ezwsLPgyyY4bro_CK6xFLkjgmKACvxHR/view" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">WHITE PAPER</span></a>
             </div>
             <div className="bf-kv">
-              <a className="bf-btn" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">ONE PAGER</span></a>
+              <a className="bf-btn" href="https://drive.google.com/file/d/1DcsaMA8aKntKl2hwlvYyTjG2_G3ESf6J/view" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">ONE PAGER</span></a>
             </div>
             <div className="bf-kv">
-              <a className="bf-btn" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">FAQ</span></a>
+              <a className="bf-btn" href="https://drive.google.com/file/d/1IjkZg3gD_zKMjqLjsLGARTXsebA4d6o0/view" target="_blank" rel="noopener noreferrer"><span className="bf-btn-value">FAQ</span></a>
             </div>
           </div>
 

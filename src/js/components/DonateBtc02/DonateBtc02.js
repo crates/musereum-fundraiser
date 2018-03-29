@@ -57,7 +57,7 @@ export default class DonateBtc02 extends Component { // eslint-disable-line
         title='Contribute BTC'
         subtitle={
           <div>
-            <strong>Please confirm your contribution.</strong> Once you confirm, funds will be sent from your intermediate Bitcoin wallet to the Musereum Fundraiser exodus address.
+            <strong>Please confirm your contribution.</strong> Once you confirm, funds will be sent from your intermediate Bitcoin wallet to the Musereum Fundraiser address.
           </div>
         }
         submit={

@@ -36,6 +36,8 @@ export default class FormMsg extends Component { // eslint-disable-line
         return'is required';
       case 'match':
         return 'must be identical';
+      case 'words':
+        return `must be at least ${length} words`;
       case 'exactLength':
         return `must be exactly ${length} characters`;
       case 'minLength':

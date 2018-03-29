@@ -37,19 +37,27 @@ export default class InputWallet extends Component { // eslint-disable-line
 
   nextStep = () => {
     if (isEmpty(this.state.error)) {
-      this.props.setDonationMnemonicAndWallet(this.mnemonicValue)
-      this.props.setDonationProgress(3);
+      this.props.setDonationMnemonicAndWallet(this.mnemonicValue).then((action)=> {
+        if (action.type != 'ERROR') {
+          this.props.setDonationProgress(3);
+        }
+      })
     }
   }
 
   handleChangeMnemonic = (event) => {
     const { donation } = this.props;
     this.mnemonicValue = event.target.value;
+    let words = this.mnemonicValue.trim().split(/\s+/g);
 
     let error = {};
 
     if (this.mnemonicValue == '') {
       error.required = true;
+    }
+
+    if (words.length < 12) {
+      error.words = true;
     }
 
     this.setState({ error });
@@ -96,6 +104,9 @@ export default class InputWallet extends Component { // eslint-disable-line
           </FieldGroupBox>
           {error.required &&
             <FormMsg name="Mnemonic" type="required" />
+          }
+          {error.words &&
+            <FormMsg name="Mnemonic" type="words" length="12"/>
           }
         </FormGroupBox>
 

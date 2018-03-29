@@ -40,15 +40,17 @@ export default class CreateWallet01 extends Component { // eslint-disable-line
         title={'Contribute ' + donation.currency}
         subtitle={
           fundraiserActive ?
-            `Copy this mnemonic and store it in a secure location. You'll need it to access your etm later.`
+            <div>
+              Copy this mnemonic and store it in a secure location. <b>You'll need it to access your ETM later.</b>
+            </div>
           :
-          <div>
-            <br />
-            <p className="end-notice">
-              <strong>NOTICE: </strong>
-              The fundraiser is not active. If you choose to contribute, <strong>you will NOT receive ETM</strong>.
-            </p>
-          </div>
+            <div>
+              <br />
+              <p className="end-notice">
+                <strong>NOTICE: </strong>
+                The fundraiser is not active. If you choose to contribute, <strong>you will NOT receive ETM</strong>.
+              </p>
+            </div>
         }
         reset={
           <Btn

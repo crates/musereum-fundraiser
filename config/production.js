@@ -1,8 +1,8 @@
 module.exports = {
-  START_DATETIME: '2017-08-15 13:00:00',
+  START_DATETIME: '2017-12-13 13:00:00',
   api: {
     host: 'https://tokensale.musereum.org',
-    port: '80',
+    port: false, //'80',
     suffix: 'api'
   },
 };

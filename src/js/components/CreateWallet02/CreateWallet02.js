@@ -41,6 +41,7 @@ export default class CreateWallet02 extends Component { // eslint-disable-line
   handleChangeMnemonic = (event) => {
     const { donation } = this.props;
     this.mnemonicValue = event.target.value;
+    let words = this.mnemonicValue.trim().split(/\s+/g);
 
     let error = {};
 
@@ -50,6 +51,10 @@ export default class CreateWallet02 extends Component { // eslint-disable-line
 
     if (this.mnemonicValue !== donation.mnemonic) {
       error.matches = true;
+    }
+
+    if (words.length < 12) {
+      error.words = true;
     }
 
     this.setState({ error });
@@ -96,6 +101,9 @@ export default class CreateWallet02 extends Component { // eslint-disable-line
           }
           {error.matches &&
             <FormMsg name="Mnemonic" type="match"/>
+          }
+          {error.words &&
+            <FormMsg name="Mnemonic" type="words" length="12"/>
           }
         </FormGroupBox>
 

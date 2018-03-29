@@ -19,8 +19,19 @@ export function setDonationMnemonicAndWallet(mnemonic) {
           }
         });
       } catch (err) {
-        throw err;
-        reject(err);
+        dispatch(notify({
+          title: 'Mnemonic Error',
+          message: err.message,
+          status: 'error',
+          dismissible: true,
+          dismissAfter: 5000
+        }));
+        reject({
+          type: 'ERROR',
+          payload: {
+            error: err.message,
+          }
+        });
       }
     }).then(dispatch);
   }

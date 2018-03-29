@@ -69,6 +69,13 @@ export default class ModuleDonate extends Component { // eslint-disable-line
         overlay={
           !fundraiserActive ? <ModuleOverlay overlayMessage={overlayMessage} /> : null
         }
+        footer={
+          <div className="how-to-buy">
+            <a href="https://docs.google.com/document/d/1QruR3ZQOfAo455qK3SPt_DGhwYxXX2MP_BTF_LRvQiI">
+              <i className="fa fa-question-circle-o"></i>How to buy?
+            </a>
+          </div>
+        }
       >
 
         <KeyValuesBox>

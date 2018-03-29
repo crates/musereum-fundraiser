@@ -3,7 +3,7 @@ import Request from './request' ;
 
 // Action key that carries API call info interpreted by this Redux middleware.
 export const CALL_API = Symbol('Call API');
-const path = `${config.api.host}:${config.api.port}${config.api.suffix ? '/'+config.api.suffix : ''}`;
+const path = `${config.api.host}${config.api.port ? ':'+config.api.port : ''}${config.api.suffix ? '/'+config.api.suffix : ''}`;
 
 const request = () => new Request({
   path,
